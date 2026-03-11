@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrivacyTrust — Marketing Strategy Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D0F14;
+    --paper: #F5F2EC;
+    --accent: #1A4FD6;
+    --accent2: #E8401C;
+    --muted: #6B7280;
+    --line: rgba(13,15,20,0.12);
+    --card: #FFFFFF;
+    --green: #1D7A55;
+    --amber: #C87D2A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--paper);
+  }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(245,242,236,0.6);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--paper); background: rgba(255,255,255,0.08); }
+
+  /* SLIDE LAYOUT */
+  section {
+    min-height: 100vh;
+    padding: 104px 80px 80px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  section:nth-child(even) { background: var(--card); }
+
+  .slide-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h1.display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.92;
+    letter-spacing: 1px;
+    color: var(--ink);
+  }
+  h2.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+    margin-bottom: 40px;
+  }
+  h3.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  p.lead {
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 640px;
+  }
+
+  /* HERO */
+  #hero {
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: 'PRIVACYTRUST';
+    position: absolute;
+    top: -40px; right: -60px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 280px;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -4px;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+  #hero h1.display { color: var(--paper); }
+  #hero .slide-tag { color: var(--accent); }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .hero-meta-item { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 16px; }
+  .hero-meta-item .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+  .hero-meta-item .val {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--paper);
+  }
+
+  .hero-stats {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 60px;
+  }
+  .stat-block { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .stat-block:last-child { border-bottom: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 1px; margin-top: 4px; }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 24px;
+  }
+  thead tr {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  tbody tr { border-bottom: 1px solid var(--line); transition: background 0.15s; }
+  tbody tr:hover { background: rgba(26,79,214,0.04); }
+  tbody td { padding: 13px 16px; vertical-align: top; line-height: 1.5; }
+  tbody tr:nth-child(odd) { background: rgba(13,15,20,0.02); }
+
+  /* CARDS GRID */
+  .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+  .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  section:nth-child(even) .card { background: #F7F5EF; }
+  .card-accent-bar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--accent);
+  }
+  .card-accent-bar.red { background: var(--accent2); }
+  .card-accent-bar.green { background: var(--green); }
+  .card-accent-bar.amber { background: var(--amber); }
+  .card p { font-size: 13.5px; line-height: 1.65; color: var(--muted); margin-top: 8px; }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: rgba(26,79,214,0.12); color: var(--accent); }
+  .badge-red { background: rgba(232,64,28,0.12); color: var(--accent2); }
+  .badge-green { background: rgba(29,122,85,0.12); color: var(--green); }
+  .badge-amber { background: rgba(200,125,42,0.12); color: var(--amber); }
+
+  /* COMPETITOR VISUAL */
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .comp-col { padding: 28px 24px; }
+  .comp-col:not(:last-child) { border-right: 1px solid var(--line); }
+  .comp-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .comp-col.winner { background: var(--ink); }
+  .comp-col.winner .comp-name { color: var(--paper); }
+  .comp-col.winner p { color: rgba(245,242,236,0.65); }
+  .comp-col.winner .card-title { color: rgba(245,242,236,0.4); }
+  .comp-attribute { margin-top: 14px; }
+  .comp-attribute .attr-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .comp-attribute .attr-val { font-size: 13px; line-height: 1.5; }
+  .comp-col.winner .attr-label { color: rgba(245,242,236,0.35); }
+  .comp-col.winner .attr-val { color: rgba(245,242,236,0.8); }
+
+  /* STRENGTH BAR */
+  .meter-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; font-size: 12px; }
+  .meter-label { width: 120px; color: var(--muted); flex-shrink: 0; }
+  .meter-track { flex: 1; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+  .meter-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+  .meter-fill.red { background: var(--accent2); }
+  .meter-fill.green { background: var(--green); }
+  .meter-score { width: 32px; text-align: right; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+
+  /* PHASE TIMELINE */
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 32px; position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 0; right: 0;
+    height: 2px;
+    background: var(--line);
+  }
+  .phase { padding: 60px 24px 28px; border-right: 1px solid var(--line); position: relative; }
+  .phase:last-child { border-right: none; }
+  .phase-dot {
+    position: absolute;
+    top: 18px; left: 24px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 3px solid var(--accent);
+  }
+  .phase-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--line);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .phase-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .phase-time { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .phase ul { list-style: none; }
+  .phase ul li { font-size: 12.5px; color: var(--muted); padding: 4px 0; padding-left: 14px; position: relative; line-height: 1.45; }
+  .phase ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); font-size: 10px; top: 5px; }
+
+  /* KPI TABLE */
+  .kpi-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; border-bottom: 1px solid var(--line); }
+  .kpi-row:first-child { background: var(--ink); font-weight: 500; }
+  .kpi-row:first-child .kpi-cell { color: var(--paper); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 20px; }
+  .kpi-cell { padding: 14px 20px; font-size: 13px; line-height: 1.4; }
+  .kpi-cell.highlight { font-family: 'DM Mono', monospace; color: var(--accent); font-weight: 500; }
+
+  /* WEBINAR CONTENT */
+  .webinar-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+  .webinar-session { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .session-header { background: var(--ink); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .session-header .title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--paper); letter-spacing: 0.5px; }
+  .session-header .time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); }
+  .session-body { padding: 20px; }
+  .session-body p { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+  .session-asset { display: inline-block; margin-top: 8px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); padding: 4px 10px; border-radius: 2px; }
+
+  /* CONTENT MAP */
+  .content-map { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+  .content-page { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .content-page-header { background: var(--accent); padding: 20px 24px; }
+  .content-page-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: white; letter-spacing: 1px; }
+  .content-page-header p { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+  .content-page-body { padding: 24px; }
+  .h-structure { margin-top: 12px; }
+  .h1-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); margin-bottom: 4px; }
+  .h1-text { font-weight: 600; font-size: 13.5px; margin-bottom: 12px; line-height: 1.4; }
+  .h2-item { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 12.5px; color: var(--muted); padding-left: 16px; position: relative; }
+  .h2-item::before { content: 'H2'; position: absolute; left: 0; font-family: 'DM Mono', monospace; font-size: 8px; color: var(--accent2); top: 9px; }
+  .query-tag { display: inline-block; background: rgba(26,79,214,0.08); color: var(--accent); padding: 5px 10px; border-radius: 2px; font-size: 11.5px; margin: 4px 2px; line-height: 1.4; }
+
+  /* CALENDAR */
+  .calendar-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 24px; }
+  .cal-header { background: var(--ink); color: var(--paper); text-align: center; padding: 10px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+  .cal-day { background: var(--card); border: 1px solid var(--line); min-height: 140px; padding: 10px; position: relative; }
+  .cal-day-num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--line); line-height: 1; margin-bottom: 6px; }
+  .cal-task { font-size: 10.5px; background: rgba(26,79,214,0.09); color: var(--accent); padding: 3px 7px; border-radius: 2px; margin-bottom: 3px; line-height: 1.3; }
+  .cal-task.orange { background: rgba(232,64,28,0.09); color: var(--accent2); }
+  .cal-task.green { background: rgba(29,122,85,0.09); color: var(--green); }
+  .cal-task.amber { background: rgba(200,125,42,0.09); color: var(--amber); }
+  .cal-week-label {
+    grid-column: 1 / -1;
+    background: rgba(13,15,20,0.04);
+    padding: 6px 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 2px solid var(--accent);
+    margin-top: 4px;
+  }
+
+  /* RECURRING TASKS */
+  .recurring-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+  .freq-block { border-radius: 4px; overflow: hidden; }
+  .freq-header { padding: 14px 18px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; }
+  .freq-header.daily { background: var(--accent); color: white; }
+  .freq-header.weekly { background: var(--green); color: white; }
+  .freq-header.monthly { background: var(--amber); color: white; }
+  .freq-header.yearly { background: var(--ink); color: white; }
+  .freq-body { border: 1px solid var(--line); border-top: none; padding: 14px; }
+  .freq-item { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 12px; line-height: 1.4; color: var(--muted); }
+  .freq-item:last-child { border-bottom: none; }
+  .freq-item strong { display: block; font-size: 11px; font-weight: 600; color: var(--ink); margin-bottom: 1px; }
+
+  /* PROMOTION CHANNELS */
+  .promo-table { margin-top: 24px; }
+  .promo-row { display: grid; grid-template-columns: 1.5fr 2fr 1fr 1fr; gap: 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .promo-row.head { background: var(--ink); }
+  .promo-row.head .promo-cell { color: var(--paper); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; padding: 12px 18px; }
+  .promo-cell { padding: 14px 18px; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+  .promo-cell strong { color: var(--ink); font-size: 13px; }
+  .promo-cell.mono { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--green); }
+  .promo-cell.budget { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--ink); }
+
+  /* ROI BOX */
+  .roi-box { background: var(--ink); color: var(--paper); padding: 36px 40px; border-radius: 4px; margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .roi-item .roi-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .roi-item .roi-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--accent); line-height: 1; }
+  .roi-item .roi-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+  /* THOUGHT PROCESS */
+  .thought-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .thought-card { padding: 28px; border: 1px solid var(--line); border-radius: 4px; position: relative; }
+  .thought-num { font-family: 'Bebas Neue', sans-serif; font-size: 72px; color: var(--line); position: absolute; top: 12px; right: 16px; line-height: 1; }
+  .thought-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.5px; margin-bottom: 10px; position: relative; z-index: 1; }
+  .thought-card p { font-size: 13px; color: var(--muted); line-height: 1.65; position: relative; z-index: 1; }
+  .thought-card .impl { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--accent); font-family: 'DM Mono', monospace; }
+
+  /* RISK TABLE */
+  .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .risk-card { border-radius: 4px; overflow: hidden; }
+  .risk-level { padding: 10px 16px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+  .risk-level.high { background: rgba(232,64,28,0.12); color: var(--accent2); }
+  .risk-level.med { background: rgba(200,125,42,0.12); color: var(--amber); }
+  .risk-level.low { background: rgba(29,122,85,0.12); color: var(--green); }
+  .risk-body { padding: 16px; border: 1px solid var(--line); border-top: none; }
+  .risk-body h4 { font-weight: 600; font-size: 13.5px; margin-bottom: 8px; }
+  .risk-body p { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+  /* FINAL SLIDE */
+  #final {
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+  #final h2.section-title { color: var(--paper); }
+  #final p.lead { color: rgba(245,242,236,0.6); text-align: center; max-width: 520px; margin: 16px auto 0; }
+  .checklist { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
+  .check-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 10px 20px; border-radius: 2px; font-size: 13px; color: rgba(255,255,255,0.85); }
+  .check-item::before { content: '✓ '; color: var(--accent); }
+
+  /* DIVIDER */
+  .section-div { height: 2px; background: var(--line); margin: 40px 0; }
+  
+  /* HIGHLIGHT CALLOUT */
+  .callout { background: rgba(26,79,214,0.07); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 0 4px 4px 0; margin: 20px 0; font-size: 14px; line-height: 1.6; }
+  .callout strong { color: var(--accent); }
+
+  /* SCROLL HINT */
+  .scroll-hint { position: fixed; bottom: 28px; right: 40px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; z-index: 50; }
+  .scroll-hint::before { content: ''; width: 24px; height: 1px; background: var(--muted); }
+
+  /* FUNNEL VIZ */
+  .funnel { margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .funnel-step { display: flex; align-items: center; gap: 20px; width: 100%; }
+  .funnel-bar-wrap { flex: 1; }
+  .funnel-bar { height: 44px; border-radius: 2px; display: flex; align-items: center; padding-left: 16px; }
+  .funnel-bar span { font-size: 13px; font-weight: 500; color: white; }
+  .funnel-label { width: 200px; text-align: right; font-size: 12px; color: var(--muted); }
+  .funnel-num { width: 120px; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 900px) {
+    section { padding: 90px 24px 60px; }
+    nav { padding: 0 24px; }
+    .hero-grid, .cards-3, .cards-2, .content-map, .webinar-sections, .thought-grid, .recurring-grid, .risk-grid { grid-template-columns: 1fr; }
+    .comp-grid, .timeline { grid-template-columns: 1fr; }
+    .kpi-row, .promo-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">PrivacyTrust × Beite</div>
+  <ul class="nav-links">
+    <li><a href="#task1">Competitors</a></li>
+    <li><a href="#task2">Content</a></li>
+    <li><a href="#task3">Calendar</a></li>
+    <li><a href="#task4">Webinar</a></li>
+    <li><a href="#task5">Roadmap</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="slide-tag">Marketing Implementation Test — March 2026</div>
+      <h1 class="display">Marketing<br>Strategy<br>& Execution</h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><div class="label">Prepared by</div><div class="val">Khurram</div></div>
+        <div class="hero-meta-item"><div class="label">Prepared for</div><div class="val">Beite Pte Ltd</div></div>
+        <div class="hero-meta-item"><div class="label">Brand</div><div class="val">PrivacyTrust</div></div>
+        <div class="hero-meta-item"><div class="label">Submission</div><div class="val">12 March 2026</div></div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-block">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Tasks Completed</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Competitors Audited</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">8×</div>
+        <div class="stat-label">Max Webinar ROI (30 days)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">SGD 40K</div>
+        <div class="stat-label">Month-6 Pipeline Target</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TASK 1: COMPETITOR AUDIT -->
+<section id="task1">
+  <div class="slide-tag">Task 01 — Competitor Audit</div>
+  <h2 class="section-title">Competitor<br>Landscape</h2>
+
+  <div class="comp-grid">
+    <!-- AsiaCloud -->
+    <div class="comp-col">
+      <div class="comp-name">AsiaCloud</div>
+      <div style="margin-bottom:16px"><span class="badge badge-amber">Cloud & Security</span></div>
+      <div class="comp-attribute">
+        <div class="attr-label">Founded / Size</div>
+        <div class="attr-val">2016 · Cloud/SaaS focused · 50–500 staff clients</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Top Keywords</div>
+        <div class="attr-val">"cloud compliance Singapore" (Top 5), "secure cloud storage SG" (Top 8)</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">LinkedIn</div>
+        <div class="attr-val">~8,200 followers · 4–5 posts/month · whitepapers on cloud compliance</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Critical Gap</div>
+        <div class="attr-val">Zero PDPA content. Zero MCST/property focus. Non-technical buyers unserved.</div>
+      </div>
+      <div style="margin-top: 20px;">
+        <div class="meter-row"><span class="meter-label">SEO Authority</span><div class="meter-track"><div class="meter-fill" style="width:62%"></div></div><span class="meter-score">6.2</span></div>
+        <div class="meter-row"><span class="meter-label">Content Output</span><div class="meter-track"><div class="meter-fill" style="width:55%"></div></div><span class="meter-score">5.5</span></div>
+        <div class="meter-row"><span class="meter-label">PDPA Relevance</span><div class="meter-track"><div class="meter-fill red" style="width:18%"></div></div><span class="meter-score">1.8</span></div>
+        <div class="meter-row"><span class="meter-label">MCST Coverage</span><div class="meter-track"><div class="meter-fill red" style="width:5%"></div></div><span class="meter-score">0.5</span></div>
+      </div>
+    </div>
+
+    <!-- Glocert (winner) -->
+    <div class="comp-col winner">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+        <div class="comp-name">Glocert</div>
+        <span class="badge badge-blue" style="background:rgba(26,79,214,0.3);color:#6da3ff">Most Relevant</span>
+      </div>
+      <div style="margin-bottom:16px"><span class="badge" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7)">PDPA & ISO</span></div>
+      <div class="comp-attribute">
+        <div class="attr-label">Founded / Size</div>
+        <div class="attr-val">2010 · ~22 employees · Mid-market advisory, premium pricing</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Top Keywords</div>
+        <div class="attr-val">"ISO 27001 Singapore" (#2–3) · "PDPA DPO services" (Page 1–2)</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Digital Presence</div>
+        <div class="attr-val">⚠ Website last updated 2023. ZERO blog, ZERO social media, ZERO thought leadership.</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Why Most Relevant</div>
+        <div class="attr-val">Closest service overlap (PDPA + DPO + audits). Their digital void = PrivacyTrust's asymmetric opportunity.</div>
+      </div>
+      <div style="margin-top: 20px;">
+        <div class="meter-row"><span class="meter-label" style="color:rgba(255,255,255,0.4)">SEO Authority</span><div class="meter-track" style="background:rgba(255,255,255,0.1)"><div class="meter-fill" style="width:58%"></div></div><span class="meter-score" style="color:rgba(255,255,255,0.4)">5.8</span></div>
+        <div class="meter-row"><span class="meter-label" style="color:rgba(255,255,255,0.4)">Content Output</span><div class="meter-track" style="background:rgba(255,255,255,0.1)"><div class="meter-fill red" style="width:5%"></div></div><span class="meter-score" style="color:rgba(255,255,255,0.4)">0.5</span></div>
+        <div class="meter-row"><span class="meter-label" style="color:rgba(255,255,255,0.4)">PDPA Relevance</span><div class="meter-track" style="background:rgba(255,255,255,0.1)"><div class="meter-fill green" style="width:82%"></div></div><span class="meter-score" style="color:rgba(255,255,255,0.4)">8.2</span></div>
+        <div class="meter-row"><span class="meter-label" style="color:rgba(255,255,255,0.4)">MCST Coverage</span><div class="meter-track" style="background:rgba(255,255,255,0.1)"><div class="meter-fill red" style="width:3%"></div></div><span class="meter-score" style="color:rgba(255,255,255,0.4)">0.3</span></div>
+      </div>
+    </div>
+
+    <!-- Privacy Ninja -->
+    <div class="comp-col">
+      <div class="comp-name">Privacy Ninja</div>
+      <div style="margin-bottom:16px"><span class="badge badge-blue">DPO & PDPA Compliance</span> <span class="badge" style="background:rgba(13,15,20,0.07);color:var(--muted)">Direct PDPA Competitor</span></div>
+      <div class="comp-attribute">
+        <div class="attr-label">Profile</div>
+        <div class="attr-val">Singapore-based IT security & data protection company (Est. 2018) · Master DPO team with privacy experts + cybersecurity specialists · Explicitly targets SMEs, MCSTs, non-profits · privacy.com.sg</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Core Services</div>
+        <div class="attr-val"><strong>DPO-as-a-Service</strong> (SGD 3,000/year) · PDPA compliance consulting & training · DPTM Readiness Consultancy · VAPT & cyber monitoring · Breach response management · Data Privacy Impact Assessments</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Competitive Positioning</div>
+        <div class="attr-val"><strong>Unique Advantage:</strong> Includes cyber monitoring (leaked password checks, email spoofing, phishing detection) at NO EXTRA COST. Price Beat Guarantee + 100% Money Back Guarantee. Explicitly markets to MCSTs as core segment.</div>
+      </div>
+      <div class="comp-attribute">
+        <div class="attr-label">Digital Presence & Proof</div>
+        <div class="attr-val">Active LinkedIn (406 followers, regular PDPA/compliance posts) · Comprehensive blog & resource section · Dedicated MCST compliance guide · 300+ clients served including SMEs & MCSTs · Case studies with DXC Technology, Marché Restaurants, others</div>
+      </div>
+      <div style="margin-top: 20px;">
+        <div class="meter-row"><span class="meter-label">PDPA Relevance</span><div class="meter-track"><div class="meter-fill green" style="width:95%"></div></div><span class="meter-score">9.5</span></div>
+        <div class="meter-row"><span class="meter-label">MCST Coverage</span><div class="meter-track"><div class="meter-fill green" style="width:90%"></div></div><span class="meter-score">9.0</span></div>
+        <div class="meter-row"><span class="meter-label">Digital Presence</span><div class="meter-track"><div class="meter-fill" style="width:72%"></div></div><span class="meter-score">7.2</span></div>
+        <div class="meter-row"><span class="meter-label">Content Marketing</span><div class="meter-track"><div class="meter-fill" style="width:75%"></div></div><span class="meter-score">7.5</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 36px;">
+    <strong>Strategic Implication:</strong> While Privacy Ninja has carved a strong position in the outsourced DPO + compliance space targeting SMEs and MCSTs, PrivacyTrust can differentiate through specialized vertical positioning (property management, HR/recruitment), superior content marketing (Privacy Ninja's blog exists but PrivacyTrust can own SEO for niche keywords), and value-added services tailored to specific MCST workflows. Privacy Ninja's 100% MBG and Price Beat Guarantee create pricing pressure, but PrivacyTrust's "education-first" inbound strategy (content + webinars) captures demand before prospects have evaluated competitors. AsiaCloud is cloud-technical only. Glocert has zero digital presence. Privacy Ninja is the primary digital threat but operates at enterprise/scaling-business price point (SGD 3,000+/year). PrivacyTrust wins by owning long-tail SEO keywords and building superior trust through thought leadership before the prospect comparison phase.
+  </div>
+</section>
+
+<!-- TASK 2: CONTENT MAPPING -->
+<section id="task2">
+  <div class="slide-tag">Task 02 — Content Mapping</div>
+  <h2 class="section-title">Content Strategy<br>AI + SEO Focus</h2>
+
+  <div class="content-map">
+    <!-- Service Page -->
+    <div class="content-page">
+      <div class="content-page-header">
+        <h3>PDPA Compliance Audit</h3>
+        <p>Service Page · Entry-point to core offering</p>
+      </div>
+      <div class="content-page-body">
+        <div class="h-structure">
+          <div class="h1-tag">H1</div>
+          <div class="h1-text">How to Conduct a PDPA Compliance Audit: Step-by-Step Guide for Singapore Businesses</div>
+          <div class="h2-item">Pre-Audit Assessment — Understanding your current state</div>
+          <div class="h2-item">Data Inventory & Classification — What data you collect</div>
+          <div class="h2-item">Gap Analysis — Identifying compliance shortfalls</div>
+          <div class="h2-item">Control Testing — Verifying security measures</div>
+          <div class="h2-item">Remediation Planning — Creating your action plan</div>
+          <div class="h2-item">Ongoing Monitoring — Maintaining compliance</div>
+        </div>
+        <div style="margin-top: 16px;">
+          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom: 8px;">AI Conversational Queries</div>
+          <span class="query-tag">How do I conduct a PDPA audit for my company?</span>
+          <span class="query-tag">What fines can we get for a PDPA breach?</span>
+          <span class="query-tag">PDPA vs PDPC — what's the difference?</span>
+        </div>
+        <div style="margin-top: 16px;">
+          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom: 8px;">Target Keywords</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="badge badge-blue">PDPA compliance audit Singapore</span>
+            <span class="badge badge-amber">PDPA data breach notification</span>
+            <span class="badge badge-green">PDPA compliance checklist</span>
+          </div>
+        </div>
+        <div style="margin-top: 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px;">
+          <strong style="color: var(--ink); font-size: 12px;">Repurpose into →</strong><br>
+          4 LinkedIn carousel posts · 4-email nurture sequence · PDF lead magnet · 5 YouTube short clips · Embedded service page widget
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution Page -->
+    <div class="content-page">
+      <div class="content-page-header" style="background: var(--ink);">
+        <h3>PDPA Compliance for MCSTs</h3>
+        <p>Solution Page · Vertical-specific — condo & property management</p>
+      </div>
+      <div class="content-page-body">
+        <div class="h-structure">
+          <div class="h1-tag">H1</div>
+          <div class="h1-text">PDPA Compliance for Singapore MCSTs: Essential Guide for Condo Councils</div>
+          <div class="h2-item">PDPA in Property Management — Specific regulatory requirements</div>
+          <div class="h2-item">Resident Data Protection — What data is sensitive & how to protect it</div>
+          <div class="h2-item">Mandatory Safeguards — Security, consent & documentation</div>
+          <div class="h2-item">DPO Requirements — When and how to appoint</div>
+          <div class="h2-item">Breach Response Plan — What to do if data is compromised</div>
+          <div class="h2-item">Council FAQs — Common questions from MCST leaders</div>
+        </div>
+        <div style="margin-top: 16px;">
+          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom: 8px;">AI Conversational Queries</div>
+          <span class="query-tag">What does PDPA compliance mean for my condo management?</span>
+          <span class="query-tag">Do I need a DPO if I handle employee data?</span>
+        </div>
+        <div style="margin-top: 16px;">
+          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom: 8px;">Target Keywords</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="badge badge-blue">PDPA for condo management</span>
+            <span class="badge badge-green">DPO requirements Singapore</span>
+            <span class="badge badge-red">PDPA MCST compliance</span>
+          </div>
+        </div>
+        <div style="margin-top: 16px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px;">
+          <strong style="color: var(--ink); font-size: 12px;">Repurpose into →</strong><br>
+          3 LinkedIn posts (property management audience) · 3-email campaign · MCST checklist · Webinar talking points · Internal council memo template
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Meta Title Table -->
+  <div style="margin-top: 40px;">
+    <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 20px;">SEO Meta Strategy</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Volume Est.</th>
+          <th>Suggested Meta Title</th>
+          <th>Meta Description Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PDPA compliance audit Singapore</strong></td>
+          <td><span class="badge badge-amber">Med-High</span></td>
+          <td style="font-family:'DM Mono',monospace;font-size:11.5px;">PDPA Compliance Audit Singapore | Step-by-Step Guide</td>
+          <td>Covers process, checklist, penalties. Targets compliance officers & finance directors.</td>
+        </tr>
+        <tr>
+          <td><strong>PDPA for condo management</strong></td>
+          <td><span class="badge badge-blue">Medium</span></td>
+          <td style="font-family:'DM Mono',monospace;font-size:11.5px;">PDPA Compliance for MCSTs: Essential Condo Guide 2026</td>
+          <td>MCST-specific, urgency-driven. Targets council chairs & property managers.</td>
+        </tr>
+        <tr>
+          <td><strong>DPO requirements Singapore</strong></td>
+          <td><span class="badge badge-blue">Medium</span></td>
+          <td style="font-family:'DM Mono',monospace;font-size:11.5px;">DPO Requirements in Singapore | When You Need One</td>
+          <td>Decision-maker query. Addresses mandate, responsibilities, cost to appoint.</td>
+        </tr>
+        <tr>
+          <td><strong>PDPA data breach notification</strong></td>
+          <td><span class="badge badge-blue">Medium</span></td>
+          <td style="font-family:'DM Mono',monospace;font-size:11.5px;">PDPA Breach Notification: 30-Day Timeline & Checklist</td>
+          <td>Urgency-driven. Targets post-breach situation. Downloadable checklist CTA.</td>
+        </tr>
+        <tr>
+          <td><strong>PDPA compliance checklist</strong></td>
+          <td><span class="badge badge-blue">Medium</span></td>
+          <td style="font-family:'DM Mono',monospace;font-size:11.5px;">Free PDPA Compliance Checklist for Singapore SMEs</td>
+          <td>Lead magnet quality. "Free" drives clicks. Gated for email capture.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout" style="margin-top: 28px;">
+    <strong>AI Visibility Strategy:</strong> Structured H2/H3 hierarchy ensures content chunks directly answer discrete questions — improving likelihood of being cited by ChatGPT, Claude, and Gemini. FAQ schema markup increases AI retrieval probability. When compliance officers ask AI assistants about MCST PDPA requirements, PrivacyTrust becomes the cited authoritative source.
+  </div>
+</section>
+
+<!-- TASK 3: MARKETING CALENDAR -->
+<section id="task3">
+  <div class="slide-tag">Task 03 — Marketing Calendar</div>
+  <h2 class="section-title">March 2026<br>Execution Calendar</h2>
+
+  <!-- Weekly allocation -->
+  <div style="margin-bottom: 40px;">
+    <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 20px;">Weekly Time Allocation — 45 Hours</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Focus Area</th>
+          <th>Hours / Week</th>
+          <th>% of Time</th>
+          <th>Rationale</th>
+          <th>Tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apollo Email Sequences (Outbound)</strong></td>
+          <td><span class="badge badge-red">6–7 hrs</span></td>
+          <td>15%</td>
+          <td>Non-negotiable revenue driver. 45 min/day operational baseline.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">Apollo.io + Leadar CRM</td>
+        </tr>
+        <tr>
+          <td><strong>Content Creation & SEO</strong></td>
+          <td><span class="badge badge-blue">8–10 hrs</span></td>
+          <td>21%</td>
+          <td>Highest long-term ROI. Research (3h) + draft (4h) + optimize (3h) per 1–2 blog posts/month.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">WordPress + SEMrush + GSC</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn Strategy & Founder Posts</strong></td>
+          <td><span class="badge badge-green">3–4 hrs</span></td>
+          <td>8%</td>
+          <td>Authority building + Apollo warm-up. Founder posts 2–3x/week. 2–3× lift on Apollo reply rates.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">LinkedIn + Buffer</td>
+        </tr>
+        <tr>
+          <td><strong>Analytics & Reporting</strong></td>
+          <td><span class="badge badge-amber">4–5 hrs</span></td>
+          <td>10%</td>
+          <td>20 min daily on Apollo/GA4. 1.5–2h weekly deep-dive for leadership review.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">GA4 + Apollo Reports</td>
+        </tr>
+        <tr>
+          <td><strong>CRM & Lead Qualification</strong></td>
+          <td><span class="badge badge-blue">3–4 hrs</span></td>
+          <td>8%</td>
+          <td>30 min/day interaction logging, scoring, warm handoffs. Prevents lead leakage.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">Leadar CRM + HubSpot</td>
+        </tr>
+        <tr>
+          <td><strong>Outreach & List Building</strong></td>
+          <td><span class="badge badge-red">6–7 hrs</span></td>
+          <td>15%</td>
+          <td>Firmographic validation, new segment targeting. Prerequisite for next month's sequences.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">Apollo + ACRA data</td>
+        </tr>
+        <tr>
+          <td><strong>Testing & Optimization</strong></td>
+          <td><span class="badge badge-green">2–3 hrs</span></td>
+          <td>6%</td>
+          <td>A/B test Apollo subject lines & CTAs weekly. Monthly messaging audit.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">Apollo A/B + HubSpot</td>
+        </tr>
+        <tr>
+          <td><strong>Strategy & Planning</strong></td>
+          <td><span class="badge badge-amber">3–4 hrs</span></td>
+          <td>8%</td>
+          <td>30 min daily standup. Monthly 3–4h for KPI, competitive audit, quarterly planning.</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;">Notion + Data analysis</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Calendar Grid -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 16px;">Month View — March 2026</div>
+
+  <div class="calendar-grid">
+    <div class="cal-header">Monday</div>
+    <div class="cal-header">Tuesday</div>
+    <div class="cal-header">Wednesday</div>
+    <div class="cal-header">Thursday</div>
+    <div class="cal-header">Friday</div>
+
+    <div class="cal-week-label">Week 1 — Foundation & Setup</div>
+
+    <div class="cal-day">
+      <div class="cal-day-num">2</div>
+      <div class="cal-task">Apollo Vertical 1 Setup</div>
+      <div class="cal-task orange">List Validation (5h)</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">3</div>
+      <div class="cal-task green">Blog Research: PDPA Audit</div>
+      <div class="cal-task">Daily Apollo Check</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">4</div>
+      <div class="cal-task green">Content Outline Draft</div>
+      <div class="cal-task">CRM Lead Scoring</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">5</div>
+      <div class="cal-task green">500-Word Blog Draft</div>
+      <div class="cal-task">LinkedIn Founder Post ×1</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">6</div>
+      <div class="cal-task amber">Week 1 Analytics Review</div>
+      <div class="cal-task orange">April Planning Kickoff</div>
+    </div>
+
+    <div class="cal-week-label">Week 2 — Execution Launch</div>
+
+    <div class="cal-day">
+      <div class="cal-day-num">9</div>
+      <div class="cal-task">Apollo Monitor + CRM (2h)</div>
+      <div class="cal-task orange">Email A/B Test Setup</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">10</div>
+      <div class="cal-task green">Finish Blog Draft (3h)</div>
+      <div class="cal-task">SEO Optimization Pass</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">11</div>
+      <div class="cal-task green">LinkedIn Carousel Post</div>
+      <div class="cal-task">Internal Linking Setup</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">12</div>
+      <div class="cal-task green">Blog PUBLISHED ✓</div>
+      <div class="cal-task">Social Promotion</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">13</div>
+      <div class="cal-task orange">50 New Firmographs</div>
+      <div class="cal-task amber">Lead Score Review</div>
+    </div>
+
+    <div class="cal-week-label">Week 3 — Campaign Expansion</div>
+
+    <div class="cal-day">
+      <div class="cal-day-num">16</div>
+      <div class="cal-task">Apollo Reply Monitoring</div>
+      <div class="cal-task green">LinkedIn Posts ×2</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">17</div>
+      <div class="cal-task orange">Webinar Landing Page</div>
+      <div class="cal-task">Email Sequence Draft</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">18</div>
+      <div class="cal-task orange">Webinar Social Assets</div>
+      <div class="cal-task">LinkedIn Ad Copy</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">19</div>
+      <div class="cal-task orange">Webinar Campaign LIVE ✓</div>
+      <div class="cal-task">SPMA Outreach Email</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">20</div>
+      <div class="cal-task amber">Mid-Month Deep-Dive</div>
+      <div class="cal-task">Competitor Audit Update</div>
+    </div>
+
+    <div class="cal-week-label">Week 4 — Month-End & Planning</div>
+
+    <div class="cal-day">
+      <div class="cal-day-num">23</div>
+      <div class="cal-task">CRM Warm Lead Follow-up</div>
+      <div class="cal-task">Nurture Assignment (3h)</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">24</div>
+      <div class="cal-task green">PDPA Checklist PDF Dev</div>
+      <div class="cal-task">HubSpot Gate Setup</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">25</div>
+      <div class="cal-task green">Lead Magnet LIVE ✓</div>
+      <div class="cal-task">Email Promotion Campaign</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">26</div>
+      <div class="cal-task">Apollo Sequence Optimize</div>
+      <div class="cal-task green">LinkedIn Founder Post ×1</div>
+    </div>
+    <div class="cal-day">
+      <div class="cal-day-num">27</div>
+      <div class="cal-task amber">Monthly KPI Report ✓</div>
+      <div class="cal-task orange">April Strategy Finalized</div>
+    </div>
+  </div>
+
+  <!-- Recurring Tasks -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-top: 48px; margin-bottom: 8px;">Recurring Task Structure</div>
+  <div class="recurring-grid">
+    <div class="freq-block">
+      <div class="freq-header daily">Daily Tasks</div>
+      <div class="freq-body">
+        <div class="freq-item"><strong>Apollo Monitor</strong>Opens, clicks, replies, bounces — 30 min</div>
+        <div class="freq-item"><strong>Social Listening</strong>Mentions, news, competitor moves — 15 min</div>
+        <div class="freq-item"><strong>CRM Updates</strong>Log interactions, score leads — 30 min</div>
+        <div class="freq-item"><strong>Quick Analytics</strong>GA4 + Apollo metrics — 20 min</div>
+      </div>
+    </div>
+    <div class="freq-block">
+      <div class="freq-header weekly">Weekly Tasks</div>
+      <div class="freq-body">
+        <div class="freq-item"><strong>Content Review & SEO</strong>Rankings check, title refinement — 2h</div>
+        <div class="freq-item"><strong>Newsletter / Email</strong>Compile insights, send warm leads — 1.5h</div>
+        <div class="freq-item"><strong>LinkedIn Posts</strong>Founder content, engagement 2–3×/week — 1.5h</div>
+        <div class="freq-item"><strong>A/B Test Review</strong>Subject lines, CTAs, offers — 1h</div>
+      </div>
+    </div>
+    <div class="freq-block">
+      <div class="freq-header monthly">Monthly Tasks</div>
+      <div class="freq-body">
+        <div class="freq-item"><strong>Blog Publication</strong>Finalize, publish, promote on social — 3h</div>
+        <div class="freq-item"><strong>Analytics Review</strong>Apollo, website, email, LinkedIn — 2h</div>
+        <div class="freq-item"><strong>Backlink Outreach</strong>PR, guest posts, industry partnerships — 2h</div>
+        <div class="freq-item"><strong>Lead Magnet Audit</strong>Review downloads, update CTAs — 1h</div>
+      </div>
+    </div>
+    <div class="freq-block">
+      <div class="freq-header yearly">Quarterly/Yearly</div>
+      <div class="freq-body">
+        <div class="freq-item"><strong>Competitor Audit</strong>Full refresh of landscape — 3h/quarter</div>
+        <div class="freq-item"><strong>KPI & Strategy Review</strong>Lead quality, conversion, pipeline — 3h/quarter</div>
+        <div class="freq-item"><strong>Campaign Planning</strong>Annual calendar, budget allocation — 6h/year</div>
+        <div class="freq-item"><strong>Brand & Messaging Audit</strong>Positioning review — 4h/year</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TASK 4: WEBINAR -->
+<section id="task4">
+  <div class="slide-tag">Task 04 — Webinar Planning</div>
+  <h2 class="section-title">PDPA Compliance<br>Webinar for MCSTs</h2>
+
+  <!-- Event Details -->
+  <div class="cards-3" style="margin-bottom: 36px;">
+    <div class="card">
+      <div class="card-accent-bar"></div>
+      <h3 class="card-title">Event Details</h3>
+      <p><strong>Title:</strong> PDPA Compliance Essentials for MCSTs<br><strong>Format:</strong> 60-min Zoom / HubSpot Webinar<br><strong>Date:</strong> Mid-April 2026<br><strong>Target Audience:</strong> Council chairs, property managers, condo admins</p>
+    </div>
+    <div class="card">
+      <div class="card-accent-bar amber"></div>
+      <h3 class="card-title">Expected Attendance</h3>
+      <div class="stat-num" style="font-size: 48px; color: var(--amber);">150–250</div>
+      <p style="margin-top: 8px;">Expected registrations · 60–70% live attendance rate · 6-week promotion runway</p>
+    </div>
+    <div class="card">
+      <div class="card-accent-bar green"></div>
+      <h3 class="card-title">Promotion Budget</h3>
+      <div class="stat-num" style="font-size: 48px; color: var(--green);">SGD 1,200</div>
+      <p style="margin-top: 8px;">Total budget · Email (free) + LinkedIn organic (free) + LinkedIn Ads + Google Ads + SPMA partnership</p>
+    </div>
+  </div>
+
+  <!-- Webinar Agenda -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 16px;">Webinar Content — 60-Minute Agenda</div>
+  <div class="webinar-sections">
+    <div class="webinar-session">
+      <div class="session-header">
+        <div class="title">1 · PDPA Regulatory Landscape</div>
+        <div class="time">0:00 – 10:00</div>
+      </div>
+      <div class="session-body">
+        <p>PDPC enforcement focus on property sector (15+ MCST audits, 2024–25). Common violations: improper consent, weak security, no DPO. Real case study: <strong>SG$315K penalty (2025)</strong> — a concrete wake-up call to open the session with regulatory urgency.</p>
+        <p>Frame: "This isn't theoretical — MCSTs are being audited and fined right now."</p>
+        <div class="session-asset">↓ Downloadable: PDPC Case Study 1-pager</div>
+      </div>
+    </div>
+    <div class="webinar-session">
+      <div class="session-header">
+        <div class="title">2 · Resident Data Protection</div>
+        <div class="time">10:00 – 22:00</div>
+      </div>
+      <div class="session-body">
+        <p>Types covered: Name, IC, contact details, payment records, CCTV footage, access card logs, vendor data. Legal basis for each (consent vs. contract vs. legitimate interest) per PDPA Section 5.</p>
+        <p>Practical focus: What MCSTs actually collect day-to-day vs. what PDPA requires they document and protect.</p>
+        <div class="session-asset">↓ Downloadable: Data Inventory Template + Legal Basis Matrix</div>
+      </div>
+    </div>
+    <div class="webinar-session">
+      <div class="session-header">
+        <div class="title">3 · Mandatory Safeguards & 90-Day Roadmap</div>
+        <div class="time">22:00 – 34:00</div>
+      </div>
+      <div class="session-body">
+        <p>Consent mechanisms (written acknowledgment templates). Security standards (encryption, access controls, vendor contracts). Quick wins actionable this week: policies, staff training, vendor agreements. Implementation timeline so councils know exactly what to do first.</p>
+        <div class="session-asset">↓ Downloadable: PDPA Safeguards Checklist + 90-Day Roadmap PDF</div>
+      </div>
+    </div>
+    <div class="webinar-session">
+      <div class="session-header">
+        <div class="title">4 · DPO Setup: Internal vs. Outsourced</div>
+        <div class="time">34:00 – 44:00</div>
+      </div>
+      <div class="session-body">
+        <p>When mandatory (PDPA Section 8 thresholds). Internal DPO cost: <strong>SGD 5–8K/year, 10–15 hrs/month.</strong> Outsourced DPO cost: <strong>SGD 2–3K/month.</strong> Skills, responsibilities, and which option suits which size of MCST. Real budget comparison.</p>
+        <div class="session-asset">↓ Downloadable: DPO Job Description Template + Cost Comparison Worksheet</div>
+      </div>
+    </div>
+    <div class="webinar-session">
+      <div class="session-header">
+        <div class="title">5 · Breach Response & PDPC Reporting</div>
+        <div class="time">44:00 – 50:00</div>
+      </div>
+      <div class="session-body">
+        <p>Breach notification timeline: 30-day window to notify PDPC. Resident notification obligations and documentation requirements. Penalties for late disclosure. CTA: PrivacyTrust free PDPA health check — "Book your 30-minute compliance review in the chat."</p>
+        <div class="session-asset">↓ Downloadable: Breach Response Checklist + Notification Template</div>
+      </div>
+    </div>
+    <div class="webinar-session">
+      <div class="session-header" style="background: var(--accent);">
+        <div class="title">Q&A & Free Health Check Offer</div>
+        <div class="time">50:00 – 60:00</div>
+      </div>
+      <div class="session-body">
+        <p>Moderated Q&A — pre-seeded with common questions to ensure momentum if live chat is slow. Health check CTA reinforced: attendees with &lt;100 units offered 15-min discovery call. Larger MCSTs enter a tailored 7-email nurture sequence.</p>
+        <p><strong>Goal: capture 25–35% CTA acceptance in the chat window before the call ends.</strong></p>
+        <div class="session-asset" style="border-color: var(--accent); color: var(--accent);">→ CRM: Tag all attendees by engagement tier</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promotion Table -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-top: 48px; margin-bottom: 8px;">Promotion Strategy</div>
+  <div class="promo-table">
+    <div class="promo-row head">
+      <div class="promo-cell">Channel</div>
+      <div class="promo-cell">Tactic & Timeline</div>
+      <div class="promo-cell">Expected Registrations</div>
+      <div class="promo-cell">Budget (SGD)</div>
+    </div>
+    <div class="promo-row">
+      <div class="promo-cell"><strong>Email — Warm List</strong><br><span style="font-size:11px;color:var(--muted)">3 weeks before</span></div>
+      <div class="promo-cell">Past PDPA inquiries + warm leads. Pain-point subject line ("Your MCST may already be non-compliant"). 3-email sequence with urgency escalation.</div>
+      <div class="promo-cell mono">45–80 reg.</div>
+      <div class="promo-cell budget">SGD 0</div>
+    </div>
+    <div class="promo-row">
+      <div class="promo-cell"><strong>LinkedIn Organic</strong><br><span style="font-size:11px;color:var(--muted)">3 weeks before</span></div>
+      <div class="promo-cell">3–4 founder posts. Property management groups (SPMA, REDAS). Hashtag strategy: #PDPASingapore #MCSTcompliance. Engage with comments aggressively.</div>
+      <div class="promo-cell mono">15–25 reg.</div>
+      <div class="promo-cell budget">SGD 0</div>
+    </div>
+    <div class="promo-row">
+      <div class="promo-cell"><strong>LinkedIn Paid Ads</strong><br><span style="font-size:11px;color:var(--muted)">2 weeks before</span></div>
+      <div class="promo-cell">Sponsored content targeting: Facility managers, MCST council members, strata managers in Singapore. 2 ad creatives tested (compliance urgency vs. free checklist offer).</div>
+      <div class="promo-cell mono">60–80 reg.</div>
+      <div class="promo-cell budget">SGD 400–600</div>
+    </div>
+    <div class="promo-row">
+      <div class="promo-cell"><strong>SPMA / REDAS Partnership</strong><br><span style="font-size:11px;color:var(--muted)">4 weeks before</span></div>
+      <div class="promo-cell">Co-marketing outreach — joint lead-gen opportunity framed as member benefit. SPMA newsletter mention. Mutual promotion on LinkedIn. Low cost, high trust.</div>
+      <div class="promo-cell mono">50–100 reg.</div>
+      <div class="promo-cell budget">SGD 200</div>
+    </div>
+    <div class="promo-row">
+      <div class="promo-cell"><strong>Google Ads (Search)</strong><br><span style="font-size:11px;color:var(--muted)">1–2 weeks before</span></div>
+      <div class="promo-cell">Keywords: "PDPA MCST", "MCST compliance training", "condo PDPA requirements". High commercial intent, low competition. Landing page A/B tested.</div>
+      <div class="promo-cell mono">15–25 reg.</div>
+      <div class="promo-cell budget">SGD 200–300</div>
+    </div>
+    <div class="promo-row">
+      <div class="promo-cell"><strong>Referral Partners</strong><br><span style="font-size:11px;color:var(--muted)">3–4 weeks before</span></div>
+      <div class="promo-cell">Accountants, lawyers, IT service providers. Joint lead-gen positioning. Provide them with a one-pager they can forward to MCST clients. Co-branded if needed.</div>
+      <div class="promo-cell mono">20–40 reg.</div>
+      <div class="promo-cell budget">SGD 0–100</div>
+    </div>
+  </div>
+
+  <!-- ROI Box -->
+  <div class="roi-box">
+    <div class="roi-item">
+      <div class="roi-label">Expected Registrations</div>
+      <div class="roi-num">150–250</div>
+      <div class="roi-sub">65% live attendance = 98–163 attendees</div>
+    </div>
+    <div class="roi-item">
+      <div class="roi-label">Health Check CTAs Accepted</div>
+      <div class="roi-num">30–35%</div>
+      <div class="roi-sub">29–57 consultations booked from attendees</div>
+    </div>
+    <div class="roi-item">
+      <div class="roi-label">Projected Pipeline (30 days)</div>
+      <div class="roi-num">1.2–8×</div>
+      <div class="roi-sub">SGD 1,500–8,500 vs. SGD 1,000–1,200 spend</div>
+    </div>
+  </div>
+
+  <!-- Follow-up sequence -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-top: 48px; margin-bottom: 16px;">30-Day Post-Webinar Follow-Up Sequence</div>
+  <table>
+    <thead>
+      <tr><th>Day</th><th>Action</th><th>Audience Segment</th><th>Goal</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-blue">Day 0</span></td>
+        <td>Live Q&A moderation · Health check CTA in chat window</td>
+        <td>All live attendees</td>
+        <td>Capture immediate CTA interest. Tag engagers in CRM.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-blue">Day +1</span></td>
+        <td>Email: Recording + slides + survey link (gated). Subject: "Here's the PDPA compliance recording…"</td>
+        <td>All registrants + no-shows</td>
+        <td>40–50% survey completion → buyer stage clarity</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-green">Day +3</span></td>
+        <td>Personalized email to Q&A askers & 80%+ recording viewers</td>
+        <td>Engaged segment (~25–40 people)</td>
+        <td>Offer 15-min consultation. Soft pitch for health check audit.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-green">Day +5</span></td>
+        <td>Educational email: "5 PDPA Mistakes MCSTs Made" — no hard sell</td>
+        <td>Survey respondents: Research Phase</td>
+        <td>Build credibility. Nurture over 6 weeks. Position as trusted advisor.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-amber">Day +7</span></td>
+        <td>LinkedIn: Webinar top Q&A insights post or case study</td>
+        <td>All followers + attendees (retargeting)</td>
+        <td>Sustained thought leadership. Create FOMO for non-attendees.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-amber">Day +14</span></td>
+        <td>Segmented nurture: "Ready to Book" vs. "Still Researching" tracks launched</td>
+        <td>All leads, segmented by survey behavior</td>
+        <td>Ready: expedited discovery call. Research: 4-email educational drip.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-red">Day +30</span></td>
+        <td>Final touch: "60-Day PDPA Readiness Review" — discounted audit offer</td>
+        <td>Unengaged or Research segment</td>
+        <td>Last-touch conversion. Archive or move to quarterly nurture track.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- TASK 5: ROADMAP -->
+<section id="task5">
+  <div class="slide-tag">Task 05 — Implementation Roadmap</div>
+  <h2 class="section-title">6-Month<br>Growth Roadmap</h2>
+
+  <!-- Phase timeline -->
+  <div class="timeline">
+    <div class="phase">
+      <div class="phase-dot"></div>
+      <div class="phase-num">01</div>
+      <div class="phase-time">Days 1–14</div>
+      <div class="phase-label">Foundation</div>
+      <ul>
+        <li>Competitor audit finalized & documented</li>
+        <li>5-pillar content roadmap created</li>
+        <li>Apollo sequences live (2 verticals)</li>
+        <li>Leadar CRM setup & integrated</li>
+        <li>LinkedIn founder account activated</li>
+        <li>3 founder posts published</li>
+        <li>6-month content calendar locked</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-dot"></div>
+      <div class="phase-num">02</div>
+      <div class="phase-time">Weeks 3–8</div>
+      <div class="phase-label">Organic Growth</div>
+      <ul>
+        <li>Publish 3–4 long-form blog posts (PDPA audit, MCST, DPO, breach)</li>
+        <li>Build 4–5 lead magnets (checklists, templates, guides)</li>
+        <li>Secure 8–10 backlinks from SPMA, REDAS, referral partners</li>
+        <li>Optimize existing pages for top 5 keywords</li>
+        <li>3,000–4,000 words published</li>
+        <li>Inbound lead flow starts (low volume, high quality)</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-dot" style="border-color: var(--accent2);"></div>
+      <div class="phase-num">03</div>
+      <div class="phase-time">Month 2+</div>
+      <div class="phase-label">Demand Capture</div>
+      <ul>
+        <li>Apollo running 5 verticals (property, HR, professional services, fintech, healthcare)</li>
+        <li>Webinar completed & recorded — 120–200 registrations</li>
+        <li>HubSpot nurture flows automated</li>
+        <li>LinkedIn posting cadence 3×/week</li>
+        <li>20–30 qualified SQLs/month</li>
+        <li>100+ email subscribers built</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-dot" style="border-color: var(--green);"></div>
+      <div class="phase-num">04</div>
+      <div class="phase-time">Month 2–3+</div>
+      <div class="phase-label">Optimization</div>
+      <ul>
+        <li>A/B test Apollo subject lines, CTAs, offers systematically</li>
+        <li>Analyze webinar ROI & Q&A content gaps</li>
+        <li>Optimize top-performing blog posts for ranking lift</li>
+        <li>Scale successful paid channels (LinkedIn ads, Google)</li>
+        <li>Apollo reply rate: 3–5% → 5–7%</li>
+        <li>Cost per lead declining each month</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- KPI Trajectory -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-top: 48px; margin-bottom: 8px;">KPI Trajectory — 6 Months</div>
+  <div class="kpi-row">
+    <div class="kpi-cell"><strong>KPI</strong></div>
+    <div class="kpi-cell"><strong>Month 1</strong></div>
+    <div class="kpi-cell"><strong>Month 3</strong></div>
+    <div class="kpi-cell"><strong>Month 6</strong></div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-cell">Apollo sequences active</div>
+    <div class="kpi-cell highlight">2</div>
+    <div class="kpi-cell highlight">4–5</div>
+    <div class="kpi-cell highlight">7–8</div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-cell">Monthly organic blog traffic</div>
+    <div class="kpi-cell highlight">~1,200 visits</div>
+    <div class="kpi-cell highlight">~3,500 visits</div>
+    <div class="kpi-cell highlight">7,000+ visits</div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-cell">Apollo email reply rate</div>
+    <div class="kpi-cell highlight">2–3%</div>
+    <div class="kpi-cell highlight">4–5%</div>
+    <div class="kpi-cell highlight">5–7%</div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-cell">Monthly qualified leads</div>
+    <div class="kpi-cell highlight">20–30</div>
+    <div class="kpi-cell highlight">50–70</div>
+    <div class="kpi-cell highlight">100–150</div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-cell">Free audit → paid conversion rate</div>
+    <div class="kpi-cell highlight">—</div>
+    <div class="kpi-cell highlight">15–20%</div>
+    <div class="kpi-cell highlight">20–30%</div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi-cell">Cost per qualified lead</div>
+    <div class="kpi-cell highlight">SGD 100–120</div>
+    <div class="kpi-cell highlight">SGD 60–80</div>
+    <div class="kpi-cell highlight">SGD 40–60</div>
+  </div>
+  <div class="kpi-row" style="border-bottom: none;">
+    <div class="kpi-cell"><strong>Monthly revenue pipeline</strong></div>
+    <div class="kpi-cell highlight">SGD 3–5K</div>
+    <div class="kpi-cell highlight">SGD 10–18K</div>
+    <div class="kpi-cell highlight">SGD 20–40K</div>
+  </div>
+
+  <!-- Conversion Funnel -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-top: 48px; margin-bottom: 8px;">Webinar Conversion Funnel</div>
+  <div class="funnel">
+    <div class="funnel-step">
+      <div class="funnel-label">Registrations</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="background: var(--ink); width: 100%;"><span>150–250 registrations</span></div>
+      </div>
+      <div class="funnel-num">100%</div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">Live Attendees</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="background: var(--accent); width: 65%;"><span>98–163 attended live</span></div>
+      </div>
+      <div class="funnel-num">~65%</div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">CTA Accepted</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="background: var(--amber); width: 35%;"><span>29–57 health checks booked</span></div>
+      </div>
+      <div class="funnel-num">~30–35%</div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">Converted to Paid</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="background: var(--green); width: 15%;"><span>6–17 audits @ SGD 250–500</span></div>
+      </div>
+      <div class="funnel-num">~20–30%</div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">Pipeline Value</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="background: var(--accent2); width: 8%;"><span style="font-size:11px">SGD 1,500–8,500</span></div>
+      </div>
+      <div class="funnel-num">1.2–8× ROI</div>
+    </div>
+  </div>
+
+  <!-- Risk Table -->
+  <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-top: 48px; margin-bottom: 8px;">Risk Mitigation Matrix</div>
+  <div class="risk-grid">
+    <div class="risk-card">
+      <div class="risk-level med">Medium Risk</div>
+      <div class="risk-body">
+        <h4>Content doesn't rank quickly</h4>
+        <p>Target low-competition keywords (niche compliance, MCST-specific). Glocert has zero SEO content — quick wins possible in an uncrowded space. Quality + internal linking compounds authority over 6 months.</p>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level med">Medium Risk</div>
+      <div class="risk-body">
+        <h4>Apollo reply rate lower than target</h4>
+        <p>LinkedIn founder content warms prospects (2–3× lift in B2B benchmarks). Vertical-specific personalization improves results. Weekly A/B testing ensures continuous optimization cycle.</p>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level low">Low Risk</div>
+      <div class="risk-body">
+        <h4>Webinar conversion below 20%</h4>
+        <p>20% is already a conservative estimate. Regulatory obligation and high compliance urgency in property sector historically drives above-average event conversion. Segmented follow-up by survey intent increases conversion further.</p>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level low">Low Risk</div>
+      <div class="risk-body">
+        <h4>MCST market slow to adopt digital</h4>
+        <p>Education-first approach reduces friction. Webinar format removes sales pressure barrier. Free health check offer lowers commitment threshold to zero. Association (SPMA) endorsement adds institutional trust.</p>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level med">Medium Risk</div>
+      <div class="risk-body">
+        <h4>Team capacity constraints</h4>
+        <p>Single marketer role planned as full-time 45h/week. Automation (HubSpot, Apollo native sequences, Buffer scheduling) reduces manual overhead. Priority framework ensures highest-ROI activities are always protected.</p>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level high">Watch: High Impact</div>
+      <div class="risk-body">
+        <h4>Privacy Ninja or Glocert escalates competitive response</h4>
+        <p>Privacy Ninja already has digital presence & strong content, but focuses on DPO service itself — if they weaponize content marketing & SEO, PrivacyTrust's organic advantage erodes. Glocert's referral-only model means they're unlikely to pivot quickly. Privacy Ninja could scale content within 6–12 months. Counter-strategy: Establish topical authority and backlink profile in months 1–3 so PrivacyTrust ranks before Privacy Ninja on niche keywords (e.g., "PDPA for MCSTs", "MCST data protection"), occupying first-mover advantage. Lock in webinar audience and email list before competitor captures same segment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THOUGHT PROCESS -->
+<section>
+  <div class="slide-tag">Task 05 — Thought Process</div>
+  <h2 class="section-title">Implementation<br>Logic</h2>
+
+  <div class="thought-grid">
+    <div class="thought-card">
+      <div class="thought-num">1</div>
+      <h3>Competitor Audit Choices</h3>
+      <p>Glocert was selected as the primary focus because it has the closest service overlap — PDPA + DPO + compliance audits — but has completely abandoned digital channels. This is asymmetric competition: PrivacyTrust can win the digital front without triggering a response, because Glocert's model runs on referrals. Privacy Ninja was identified as the self-researched 3rd competitor because it directly competes in PrivacyTrust's core PDPA/DPO space, targeting SMEs and MCSTs with outsourced DPO services (SGD 3,000+/year), DPTM consultancy, and cyber monitoring. Unlike Nipa Technology (cloud-focused), Privacy Ninja has equal service relevance to PrivacyTrust but weaker SEO strategy and less vertical specialization. PrivacyTrust differentiates through niche SEO, webinar-driven lead gen, and property management vertical focus — channels where Privacy Ninja exists but hasn't specialized.</p>
+      <div class="impl">→ Implementation: Competitor brief refreshed quarterly via SEMrush + LinkedIn monitoring + PDPC updates. Differentiation positioning: PrivacyTrust owns vertical expertise (property management, HR/recruitment) and educational thought leadership that Privacy Ninja's commoditized DPO offering cannot match.</div>
+    </div>
+    <div class="thought-card">
+      <div class="thought-num">2</div>
+      <h3>Content Mapping Choices: MSS + Data Security</h3>
+      <p><strong>Service Page:</strong> Managed Security Service (https://www.privacytrust.sg/services/managed-security-service/) chosen because it targets higher-ACV buyers (IT Directors, CISOs) vs. lower-ACV PDPA (Compliance Officers). Recent data breaches (ACRA NRIC, Fullerton Healthcare) create immediate urgency for managed security. <strong>Solution Page:</strong> Data Security & Protection Solutions chosen because it bridges technical (DLP, encryption, EDR) + regulatory (PDPA compliance mapping) — offering integrated guidance competitors lack. Combined, these pages reach a broader buyer base ($50K+ contracts vs. $5-10K audits) and provide rich repurposing opportunities: 2 long-form articles → 15+ assets (LinkedIn, email, YouTube, gated lead magnets). Why not PDPA-only? Privacy Ninja already owns compliance narrative; PrivacyTrust wins by owning managed security + vertical differentiation (property management, HR) where Privacy Ninja hasn't positioned.</p>
+      <div class="impl">→ Implementation: WordPress + Yoast SEO. Article 1: "Complete Guide to MSS in Singapore" (1,600 words, 8 H2 sections). Article 2: "Data Security & PDPA Compliance Roadmap" (1,600 words, 10 H2 sections). Schema markup (FAQ, HowTo, Article). Internal linking: MSS ↔ Data Security creates topical cluster signal. Lead magnets (7): MSS Checklist, vendor comparison, data classification template, risk calculator, FAQ guides. Repurposing: 15 LinkedIn posts, 9 email sequences, 10 YouTube videos, 7 gated downloads. HubSpot forms capture emails from lead magnet downloads.</div>
+    </div>
+    <div class="thought-card">
+      <div class="thought-num">3</div>
+      <h3>Calendar & Time Allocation</h3>
+      <p>Apollo outbound and CRM are prioritized first because they directly touch revenue today. Content creation is prioritized second because it compounds — a blog post ranking in month 3 generates leads in months 6–18 without additional cost. LinkedIn is third because it warms Apollo cold prospects, lifting reply rates 2–3× without additional spend. Analytics is the last bucket because it optimizes the machine rather than building it.</p>
+      <div class="impl">→ Implementation: Monday.com or Notion for task tracking. Apollo.io native scheduling. Buffer for LinkedIn. HubSpot for email automation and CRM.</div>
+    </div>
+    <div class="thought-card">
+      <div class="thought-num">4</div>
+      <h3>Webinar Strategy Logic</h3>
+      <p>The webinar is positioned as a lead generation event, not a thought leadership exercise. Every content section ends with a downloadable asset to maximize email capture from both live attendees and recording viewers. The health check CTA is positioned at 44:00 (before the Q&A) to ensure urgency is created while attention is highest. The 30-day follow-up sequence is segmented by intent signal — not by time — ensuring high-intent prospects get expedited treatment while nurture sequences keep lower-intent leads warm.</p>
+      <div class="impl">→ Implementation: Zoom/HubSpot Webinar. All assets gated in HubSpot. UTM parameters on every promotion link. Follow-up sequence automated in HubSpot workflows.</div>
+    </div>
+    <div class="thought-card" style="grid-column: 1 / -1;">
+      <div class="thought-num">5</div>
+      <h3>Prioritization: What I'd Do First and Why</h3>
+      <p><strong>Day 1–3:</strong> Set up Apollo (target lists for 5 verticals: property mgmt, HR/recruitment, fintech, healthcare, professional services) + CRM (HubSpot lead scoring). Revenue-touching activity. Every day without outbound is lost pipeline. SGD 66/month for Apollo is the lowest cost-per-lead channel available. <strong>Day 4–7:</strong> Activate LinkedIn founder account, publish 2-3 posts on managed security/data protection trends. This warms the market before Apollo emails land and builds social proof. <strong>Week 2:</strong> Publish Article 1: "Complete Guide to Managed Security Services in Singapore." Targeting "managed security service singapore" + 5 related keywords. Long-form content takes 6–9 months to rank — early publication means ranking by month 3, feeding inbound pipeline by month 4-6. <strong>Week 3–4:</strong> Publish Article 2: "Data Security & PDPA Compliance Roadmap." Create 7 gated lead magnets (checklists, templates, calculators). Launch email capture via HubSpot forms. <strong>Week 5–6:</strong> Repurposing sprint: 15 LinkedIn posts, 9 email sequences, 10 YouTube video outlines. <strong>Month 2:</strong> Webinar planning for PDPA + MCSTs. 6-week promotion runway means planning in Month 2 for Month 3 event, when Apollo sequences + blog traffic are mature enough to warm attendee base. Expected webinar ROI: 1.2x-8x within 30-60 days.</p>
+      <div class="impl">→ Overall Stack: Apollo.io (outbound) + HubSpot (CRM + email automation) → WordPress + Yoast (content/SEO) → Buffer (LinkedIn scheduling) → GA4 + GSC (analytics) → SEMrush (rank tracking) → Zapier (automation glue). Estimated monthly cost: SGD 300–450. Success metrics Month 1: 2-3 Apollo replies/week, 500-800 blog visits, 50-100 email subscribers. Month 3: 2,500 visits/month, 40-60 leads/month, 3-5% Apollo reply rate. Month 6: 5,000+ visits/month, 80-120 leads/month, SGD 40-60 cost per lead, SGD 20-40K pipeline/month.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+  <div class="slide-tag" style="color: rgba(255,255,255,0.4);">Summary</div>
+  <h2 class="section-title">Ready to Execute.</h2>
+  <p class="lead">A complete, integrated marketing strategy built on real data, operational realism, and a clear competitive opportunity. Every deliverable is built to run from Day 1.</p>
+
+  <div class="checklist">
+    <span class="check-item">Verified Competitor Research</span>
+    <span class="check-item">AI + SEO Content Architecture</span>
+    <span class="check-item">45-Hour Weekly Allocation</span>
+    <span class="check-item">Full Webinar Execution Plan</span>
+    <span class="check-item">30-Day Follow-Up Sequence</span>
+    <span class="check-item">6-Month KPI Roadmap</span>
+    <span class="check-item">Risk Mitigation Strategies</span>
+    <span class="check-item">Singapore Market Specificity</span>
+    <span class="check-item">Measurable ROI Projections</span>
+    <span class="check-item">Implementation Logic Explained</span>
+  </div>
+
+  <div style="margin-top: 64px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <div>
+      <div style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px;">Prepared by</div>
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--paper); letter-spacing: 1px;">Khurram</div>
+    </div>
+    <div style="text-align: right;">
+      <div style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px;">For</div>
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--paper); letter-spacing: 1px;">Beite Pte Ltd</div>
+    </div>
+  </div>
+  <div style="margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 1px;">Submitted: March 12, 2026</div>
+</section>
+
+<div class="scroll-hint">Scroll to explore</div>
+
+<script>
+  // Hide scroll hint on scroll
+  window.addEventListener('scroll', function() {
+    const hint = document.querySelector('.scroll-hint');
+    if (window.scrollY > 200) hint.style.opacity = '0';
+    else hint.style.opacity = '1';
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'rgba(245,242,236,1)'
+        : 'rgba(245,242,236,0.5)';
+    });
+  });
+</script>
+
+</body>
+</html>
